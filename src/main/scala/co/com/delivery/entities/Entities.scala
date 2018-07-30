@@ -24,4 +24,4 @@ case class OrientationW(orientation: Orientation) extends Horizon
 
 case class Coord(intX: Int,intY: Int)
 
-case class Position(coord: Coord,horizon: Horizon) 
+case class Position(coord: Coord,horizon: Horizon)
