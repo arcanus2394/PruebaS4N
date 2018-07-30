@@ -1,27 +1,59 @@
 package co.com.delivery.entities
 
 sealed trait Order
-case class I(s:String) extends Order
-case class A(s:String) extends Order
-case class D(s:String) extends Order
 
-sealed trait Accion
-case class MovementI(order: Order) extends Accion
-case class MovementA(order: Order) extends Accion
-case class MovementD(order: Order) extends Accion
+object Order {
+  def newOrder(c:Char):Order ={
+    c.toUpper match {
+      case 'A' => A()
+      case 'D' => D()
+      case 'I' => I()
+      case _ => throw new Exception(s"Caracter invalido para creacion de instruccion: $c")
+    }
+  }
+}
+
+case class I() extends Order
+case class A() extends Order
+case class D() extends Order
 
 sealed trait Orientation
-case class North(s:String) extends Orientation
-case class South(s:String) extends Orientation
-case class East(s:String) extends Orientation
-case class West(s:String) extends Orientation
 
-sealed trait Horizon
-case class OrientationN(orientation: Orientation) extends Horizon
-case class OrientationS(orientation: Orientation) extends Horizon
-case class OrientationE(orientation: Orientation) extends Horizon
-case class OrientationW(orientation: Orientation) extends Horizon
+object Orientation {
+  def newOrientation(c:Char):Orientation ={
+    c.toUpper match {
+      case 'N' => North()
+      case 'S' => South()
+      case 'E' => East()
+      case 'W' => West()
+      case _ => throw new Exception(s"Caracter invalido para creacion de instruccion: $c")
+    }
+  }
+}
+
+case class North() extends Orientation
+case class South() extends Orientation
+case class East() extends Orientation
+case class West() extends Orientation
+
 
 case class Coord(intX: Int,intY: Int)
+/* todo init coordinate
+object Coord{
+  def newCoord(intX:Int,intY: Int):Coord={
+    intX match {
+      case intX<=10 => 2
+      case 'S' => South()
+      case 'E' => East()
+      case 'W' => West()
+      case _ => throw new Exception(s"Caracter invalido para creacion de instruccion: $c")
+    }
+  }
+}*/
 
-case class Position(coord: Coord,horizon: Horizon)
+sealed trait Position{
+  val coord:Coord
+  val orientation:Orientation
+}
+
+case class DroneStatus(coord: Coord, orientation:Orientation) extends Position
