@@ -22,19 +22,19 @@ sealed trait Orientation
 object Orientation {
   def newOrientation(c:Char):Orientation ={
     c.toUpper match {
-      case 'N' => North()
-      case 'S' => South()
-      case 'E' => East()
-      case 'W' => West()
+      case 'N' => N()
+      case 'S' => S()
+      case 'E' => E()
+      case 'W' => W()
       case _ => throw new Exception(s"Caracter invalido para creacion de instruccion: $c")
     }
   }
 }
 
-case class North() extends Orientation
-case class South() extends Orientation
-case class East() extends Orientation
-case class West() extends Orientation
+case class N() extends Orientation
+case class S() extends Orientation
+case class E() extends Orientation
+case class W() extends Orientation
 
 
 case class Coord(intX: Int,intY: Int)
@@ -50,10 +50,9 @@ object Coord{
     }
   }
 }*/
+case class Drone(x:Int, y:Int, orientation: Orientation)
+case class Delivered(drone: Drone)
+object Delivered{
 
-sealed trait Position{
-  val coord:Coord
-  val orientation:Orientation
 }
 
-case class DroneStatus(coord: Coord, orientation:Orientation) extends Position
