@@ -8,6 +8,6 @@ import scala.util.Try
 
 object Main extends App {
 
-  val read = InterpetrationDeliveryService.deliver("/in/in01.txt")
+  val read = InterpetrationDeliveryService.deliver("/in/in01.txt",new Drone(0,0,N(),1))
 
 }

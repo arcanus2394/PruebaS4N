@@ -50,7 +50,7 @@ object Coord{
     }
   }
 }*/
-case class Drone(x:Int, y:Int, orientation: Orientation)
+case class Drone(x:Int, y:Int, orientation: Orientation, id:Int)
 case class Delivered(drone: Drone)
 object Delivered{
 
