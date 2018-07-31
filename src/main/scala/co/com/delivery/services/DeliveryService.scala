@@ -8,13 +8,13 @@ import scala.io.Source
 
 // Algebra
 sealed trait AlgebraDeliveryService {
-  def deliver(string: String)
+  def deliver(string: String): Either[String, Drone]
 }
 
 // Interpretation
 sealed trait InterpetrationDeliveryService extends AlgebraDeliveryService {
 
-  override def deliver(string: String) = {
+  override def deliver(string: String): Either[String, Drone]  = {
     val droneStatus = new Drone(0,0,N())
     val res: Either[String, Drone] = validateLength(Source.fromInputStream(readFile(string)).getLines.toList)
       .map(x=>x.foldLeft(droneStatus)((acum, string) => deliver(string,acum)))
