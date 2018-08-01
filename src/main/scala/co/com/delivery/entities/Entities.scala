@@ -1,23 +1,19 @@
 package co.com.delivery.entities
 
-sealed trait Order
+import scala.util.Try
 
-object Order {
-  def newOrder(c:Char):Order ={
-    c.toUpper match {
-      case 'A' => A()
-      case 'D' => D()
-      case 'I' => I()
-      case _ => throw new IllegalArgumentException(s"Caracter invalido para creacion de instruccion: $c")
-    }
-  }
-}
+sealed trait Order
+sealed trait Orientation
 
 case class I() extends Order
 case class A() extends Order
 case class D() extends Order
 
-sealed trait Orientation
+case class Coord(intX: Int,intY: Int)
+case class Drone(coord: Coord, orientation: Orientation, id:Int)
+case class Deliver(deliver: List[Order])
+case class Path(path:List[Deliver])
+case class Delivered(delivered: List[Try[Drone]])
 
 object Orientation {
   def newOrientation(c:Char):Orientation ={
@@ -26,6 +22,17 @@ object Orientation {
       case 'S' => S()
       case 'E' => E()
       case 'W' => W()
+      case _ => throw new IllegalArgumentException(s"Caracter invalido para creacion de instruccion: $c")
+    }
+  }
+}
+
+object Order {
+  def newOrder(c:Char):Order ={
+    c.toUpper match {
+      case 'A' => A()
+      case 'D' => D()
+      case 'I' => I()
       case _ => throw new IllegalArgumentException(s"Caracter invalido para creacion de instruccion: $c")
     }
   }
@@ -53,21 +60,4 @@ case class W() extends Orientation{
 }
 
 
-case class Coord(intX: Int,intY: Int)
-/* todo init coordinate
-object Coord{
-  def newCoord(intX:Int,intY: Int):Coord={
-    intX match {
-      case intX<=10 => 2
-      case 'S' => South()
-      case 'E' => East()
-      case 'W' => West()
-      case _ => throw new Exception(s"Caracter invalido para creacion de instruccion: $c")
-    }
-  }
-}*/
-case class Drone(coord: Coord, orientation: Orientation, id:Int)
-case class Delivered(deliver: List[Drone])
-case class Deliver(deliver: List[Order])
-case class Path(path:List[Deliver])
 

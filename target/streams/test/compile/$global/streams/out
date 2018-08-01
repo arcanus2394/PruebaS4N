@@ -1,5 +1,2 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/s4n/Documents/DronAuto/DronAuto/src/test/scala/modelling/dominio/ModellingSuite.scala:30:11: co.com.delivery.entities.Delivered and scala.concurrent.Future[List[co.com.delivery.entities.Drone]] are unrelated: they will most likely never compare equal[0m
-[0m[[0m[33mwarn[0m] [0m[0m    assert(res==Future(List(Drone(Coord(0,0),N(),1))))[0m
-[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mthere was one feature warning; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
