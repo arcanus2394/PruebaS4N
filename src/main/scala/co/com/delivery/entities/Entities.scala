@@ -8,7 +8,7 @@ object Order {
       case 'A' => A()
       case 'D' => D()
       case 'I' => I()
-      case _ => throw new Exception(s"Caracter invalido para creacion de instruccion: $c")
+      case _ => throw new IllegalArgumentException(s"Caracter invalido para creacion de instruccion: $c")
     }
   }
 }
@@ -26,15 +26,31 @@ object Orientation {
       case 'S' => S()
       case 'E' => E()
       case 'W' => W()
-      case _ => throw new Exception(s"Caracter invalido para creacion de instruccion: $c")
+      case _ => throw new IllegalArgumentException(s"Caracter invalido para creacion de instruccion: $c")
     }
   }
 }
 
-case class N() extends Orientation
-case class S() extends Orientation
-case class E() extends Orientation
-case class W() extends Orientation
+case class N() extends Orientation{
+  override def toString(): String ={
+    "dirección Norte"
+  }
+}
+case class S() extends Orientation{
+  override def toString(): String ={
+    "dirección Sur"
+  }
+}
+case class E() extends Orientation{
+  override def toString(): String ={
+    "dirección Este"
+  }
+}
+case class W() extends Orientation{
+  override def toString(): String ={
+    "dirección Oeste"
+  }
+}
 
 
 case class Coord(intX: Int,intY: Int)
@@ -50,9 +66,8 @@ object Coord{
     }
   }
 }*/
-case class Drone(x:Int, y:Int, orientation: Orientation, id:Int)
-case class Delivered(drone: Drone)
-object Delivered{
-
-}
+case class Drone(coord: Coord, orientation: Orientation, id:Int)
+case class Delivered(deliver: List[Drone])
+case class Deliver(deliver: List[Order])
+case class Path(path:List[Deliver])
 
