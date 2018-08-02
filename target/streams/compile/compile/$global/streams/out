@@ -1,21 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/s4n/Documents/DronAuto/DronAuto/src/main/scala/co/com/delivery/services/DeliveryService.scala:83:35: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : scala.util.Try[co.com.delivery.entities.Drone][0m
-[0m[[0m[31merror[0m] [0m[0m required: co.com.delivery.entities.Drone[0m
-[0m[[0m[31merror[0m] [0m[0m        case N() => Drone.newDrone(Coord(x,y+1),orientation,id)[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/s4n/Documents/DronAuto/DronAuto/src/main/scala/co/com/delivery/services/DeliveryService.scala:84:35: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : scala.util.Try[co.com.delivery.entities.Drone][0m
-[0m[[0m[31merror[0m] [0m[0m required: co.com.delivery.entities.Drone[0m
-[0m[[0m[31merror[0m] [0m[0m        case S() => Drone.newDrone(Coord(x,y-1),orientation,id)[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/s4n/Documents/DronAuto/DronAuto/src/main/scala/co/com/delivery/services/DeliveryService.scala:85:35: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : scala.util.Try[co.com.delivery.entities.Drone][0m
-[0m[[0m[31merror[0m] [0m[0m required: co.com.delivery.entities.Drone[0m
-[0m[[0m[31merror[0m] [0m[0m        case E() => Drone.newDrone(Coord(x+1,y),orientation,id)[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/s4n/Documents/DronAuto/DronAuto/src/main/scala/co/com/delivery/services/DeliveryService.scala:86:35: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : scala.util.Try[co.com.delivery.entities.Drone][0m
-[0m[[0m[31merror[0m] [0m[0m required: co.com.delivery.entities.Drone[0m
-[0m[[0m[31merror[0m] [0m[0m        case W() => Drone.newDrone(Coord(x-1,y),orientation,id)[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/s4n/Documents/DronAuto/DronAuto/src/main/scala/co/com/delivery/services/RWService.scala:45:5: a pure expression does nothing in statement position[0m
+[0m[[0m[33mwarn[0m] [0m[0m    droneEntregas[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

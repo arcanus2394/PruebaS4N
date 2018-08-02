@@ -14,13 +14,13 @@ case class Path(path:List[Deliver])
 case class Delivered(delivered: List[Either[String,Drone]])
 
 object Drone{
-  def newDrone(coord: Coord,orientation: Orientation,id:Int):Drone ={
+  def newDrone(coord: Coord,orientation: Orientation,id:Int):Either[String,Drone] ={
     val x = coord.intX
     val y = coord.intY
     if((x>10||y>10)||(x<(-10)||y<(-10))){
-      throw new Exception(s"El dron con id:$id se salio del grid en la posicion($x,$y)")
+      Left(s"El dron con id:$id se salio del grid en la posicion($x,$y)")
     } else {
-      Drone(coord,orientation,id)
+      Right(Drone(coord,orientation,id))
     }
   }
 }
@@ -32,7 +32,6 @@ object Orientation {
       case 'S' => S()
       case 'E' => E()
       case 'W' => W()
-      case _ => throw new IllegalArgumentException(s"Caracter invalido para creacion de instruccion: $c")
     }
   }
 }
