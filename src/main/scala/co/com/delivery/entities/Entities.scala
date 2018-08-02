@@ -11,7 +11,7 @@ case class Coord(intX: Int,intY: Int)
 case class Drone(coord: Coord, orientation: Orientation, id:Int)
 case class Deliver(deliver: List[Order])
 case class Path(path:List[Deliver])
-case class Delivered(delivered: List[Either[String,Drone]])
+case class Delivered(delivered: List[Drone])
 
 object Drone{
   def newDrone(coord: Coord,orientation: Orientation,id:Int):Either[String,Drone] ={

@@ -1,55 +1,57 @@
 package co.com.delivery.services
 
 import java.util.concurrent.Executors
-
 import co.com.delivery.entities._
-
 import scala.concurrent.{ExecutionContext, Future}
 
 // Algebra
 sealed trait AlgebraDroneService {
-  def changeDroneStatus(order: Order,droneStatus: Either[String,Drone]):Either[String,Drone]
-  def deliver(path: Path,drones: Either[String,Drone],id:Int): Future[Delivered]
+  def changeDroneStatus(order: Order, droneStatus: Drone):Drone
+  def deliver(path: Path, drones: Drone, id: Int): Future[Delivered]
 }
 
 //Interpretation
 sealed trait DroneService extends AlgebraDroneService{
-  override def changeDroneStatus(order: Order,droneStatus: Either[String,Drone]):Either[String,Drone] ={
 
-    order match {
+  implicit val ecParaPrimerHilo = ExecutionContext.fromExecutorService(Executors.newFixedThreadPool(20))
+  override def changeDroneStatus(order: Order, droneStatus: Drone):Drone ={
+
+   val res = order match {
       case A() => forward(droneStatus)
       case I() => rotateL(droneStatus)
       case D() => rotateR(droneStatus)
-      case _ => throw new Exception(s"Caracter invalido para creacion de instruccion: ")
     }
+    val resEither = for{
+      x <- res
+    } yield x
+    resEither.fold(x=>{
+      throw new Exception("Error al moverme fuera del grid")
+    },right=>right)
   }
 
-  override def deliver(path: Path,drone: Either[String,Drone],id:Int): Future[Delivered] = {
-    implicit val ecParaPrimerHilo = ExecutionContext.fromExecutorService(Executors.newFixedThreadPool(1))
+  override def deliver(path: Path, drone: Drone, id: Int): Future[Delivered] = {
+
     //Future(createDelivered(path.path.scanLeft(drone)((acum, deliver)=>address(deliver,acum)).tail))
-    Future(createDelivered(path.path.scanLeft(drone)((acum, deliver)=>address(deliver,acum)).tail,id))
+    Future(createDelivered(path.path.scanLeft(drone)((acum, deliver)=>address(deliver, acum)).tail, id))
   }
 
+  private def address(deliver: Deliver, drone: Drone):Drone ={
+    deliver.deliver.foldLeft(drone)((delAcum, order)=>changeDroneStatus(order, delAcum))
+  }
 
-  def createDelivered(list: List[Either[String,Drone]],id:Int):Delivered={
+  private def createDelivered(list: List[Drone], id: Int):Delivered={
     val del=Delivered(list)
     InterRWService.writeDroneStatus(del,id)
     del
   }
 
-  def address(deliver: Deliver,drone: Either[String,Drone]):Either[String,Drone] ={
-    deliver.deliver.foldLeft(drone)((delAcum, order)=>changeDroneStatus(order,delAcum))
-  }
+  private def forward(dronePosition: Drone):Either[String,Drone]={
 
-  def forward(dronePosition: Either[String,Drone]):Either[String,Drone]={
 
-    dronePosition.fold(l=>
-      throw new Exception(s"El dron ya esta por fuera del grid")
-      ,tryDrone=>{
-        val x = tryDrone.coord.intX
-        val y = tryDrone.coord.intY
-        val orientation = tryDrone.orientation
-        val id=tryDrone.id
+        val x = dronePosition.coord.intX
+        val y = dronePosition.coord.intY
+        val orientation = dronePosition.orientation
+        val id=dronePosition.id
 
         orientation match {
           case N() => Drone.newDrone(Coord(x,y+1),orientation,id)
@@ -57,39 +59,35 @@ sealed trait DroneService extends AlgebraDroneService{
           case E() => Drone.newDrone(Coord(x+1,y),orientation,id)
           case W() => Drone.newDrone(Coord(x-1,y),orientation,id)
         }
-      })
+
   }
 
-  def rotateL(dronePosition: Either[String,Drone]):Either[String,Drone]={
-    dronePosition.map(tryDrone=>{
-      val x = tryDrone.coord.intX
-      val y = tryDrone.coord.intY
-      val orientation = tryDrone.orientation
-      val id=tryDrone.id
+  private def rotateL(dronePosition: Drone):Either[String,Drone]={
+      val x = dronePosition.coord.intX
+      val y = dronePosition.coord.intY
+      val orientation = dronePosition.orientation
+      val id=dronePosition.id
 
       orientation match {
-        case N() => Drone(Coord(x,y),W(),id)
-        case E() => Drone(Coord(x,y),N(),id)
-        case S() => Drone(Coord(x,y),E(),id)
-        case W() => Drone(Coord(x,y),S(),id)
+        case N() => Drone.newDrone(Coord(x,y),W(),id)
+        case E() => Drone.newDrone(Coord(x,y),N(),id)
+        case S() => Drone.newDrone(Coord(x,y),E(),id)
+        case W() => Drone.newDrone(Coord(x,y),S(),id)
       }
-    })
   }
 
-  def rotateR(dronePosition: Either[String,Drone]):Either[String,Drone]={
-    dronePosition.map(tryDrone=>{
-      val x = tryDrone.coord.intX
-      val y = tryDrone.coord.intY
-      val orientation = tryDrone.orientation
-      val id=tryDrone.id
+  private def rotateR(dronePosition: Drone):Either[String,Drone]={
+      val x = dronePosition.coord.intX
+      val y = dronePosition.coord.intY
+      val orientation = dronePosition.orientation
+      val id=dronePosition.id
 
       orientation match {
-        case N() => Drone(new Coord(x,y),E(),id)
-        case E() => Drone(new Coord(x,y),S(),id)
-        case S() => Drone(new Coord(x,y),W(),id)
-        case W() => Drone(new Coord(x,y),N(),id)
+        case N() => Drone.newDrone(new Coord(x,y),E(),id)
+        case E() => Drone.newDrone(new Coord(x,y),S(),id)
+        case S() => Drone.newDrone(new Coord(x,y),W(),id)
+        case W() => Drone.newDrone(new Coord(x,y),N(),id)
       }
-    })
   }
 }
 

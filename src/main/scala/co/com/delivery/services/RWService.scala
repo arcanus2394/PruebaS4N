@@ -16,40 +16,33 @@ sealed trait AlgRWService{
 //Interpretation
 sealed trait InterRWService extends AlgRWService{
   override def readPath(string: String):Try[Path] = {
+  getfile(string).map(x=>
+      if (x.length <= 10) {
+        Try(createPath(x))
+      } else {Try(throw new Exception("El archivo de entrada tenia mas de 10 pedidos"))}
+    ).flatten
+  }
 
-    val file: List[String] = Source.fromInputStream(getClass.getResourceAsStream(s"$string")).getLines.toList
-    val readString = {
-      if (file.length <= 10) {
-        Try(createPath(file))
-      }
-      else throw new Exception("El archivo de entrada tenia mas de 10 pedidos")
-    }
-    readString
+  private def getfile(str:String):Try[List[String]]={
+    Try(Source.fromFile(s"src/main/resources/$str").getLines().toList)
   }
 
   override def writeDroneStatus(droneEntregas: Delivered,id:Int) ={
     val pw = new PrintWriter(new File(s"out$id.txt"))
-    droneEntregas.delivered.map(x=> x.fold(l=>"El Dron se salio del grid"
-      ,r=>{
-        pw.write(s"== Reporte de entregas ==")
-        droneEntregas.delivered.map(tryDrone=>tryDrone.map(drone=>{
-          {
-            val intx = drone.coord.intX
-            val inty = drone.coord.intY
-            val orientation = drone.orientation.toString
-            pw.write(s"\n($intx,$inty) $orientation"
-            )}
-        }))
-        pw.close
-      }))
-    droneEntregas
+    pw.write(s"== Reporte de entregas ==")
+    droneEntregas.delivered.map(r=>{
+      val intx = r.coord.intX
+      val inty = r.coord.intY
+      val orientation = r.orientation.toString
+      pw.write(s"\n($intx,$inty) $orientation")})
+    pw.close
   }
 
-  def createPath(list: List[String]): Path = {
+  private def createPath(list: List[String]): Path = {
     Path(list.map(string => createDeliver(string)))
   }
 
-  def createDeliver(string: String): Deliver = {
+  private def createDeliver(string: String): Deliver = {
     Deliver(string.toList.map(char => Order.newOrder(char)))
   }
 }
