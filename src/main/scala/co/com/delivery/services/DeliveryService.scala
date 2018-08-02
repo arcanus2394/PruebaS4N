@@ -11,49 +11,28 @@ import scala.util.{Failure, Success, Try}
 
 // Algebra
 sealed trait AlgebraDeliveryService {
-  //def deliver(string: String,drone: Drone): Either[String, Drone]
-  def readPath(string: String):Either[String, Path]
-  def deliver(path: Path,drones: Try[Drone]): Future[Delivered]
+  def deliver(path: Path,drones: Either[String,Drone]): Future[Delivered]
   def writeDroneStatus(droneEntregas: Delivered)
 }
 
 // Interpretation
 sealed trait InterpetrationDeliveryService extends AlgebraDeliveryService {
 
-  override def readPath(string: String):Either[String, Path]={
-
-    val file: List[String] = Source.fromInputStream(getClass.getResourceAsStream(s"$string")).getLines.toList
-    val readString = {
-      if(file.length<=10){
-        Right(createPath(file))}
-      else Left(s"El archivo supera el numero de ordenes maximo")
-    }
-    readString
-  }
-
-  def createPath(list: List[String]):Path ={
-    Path(list.map(string=>createDeliver(string)))
-  }
-
-  def createDeliver(string: String):Deliver ={
-    Deliver(string.toList.map(char=>Order.newOrder(char)))
-  }
-
-  def createDelivered(list: List[Try[Drone]]):Delivered={
+  def createDelivered(list: List[Either[String,Drone]]):Delivered={
     Delivered(list)
   }
 
-  override def deliver(path: Path,drone: Try[Drone]): Future[Delivered] = {
+  override def deliver(path: Path,drone: Either[String,Drone]): Future[Delivered] = {
     implicit val ecParaPrimerHilo = ExecutionContext.fromExecutorService(Executors.newFixedThreadPool(1))
     //Future(createDelivered(path.path.scanLeft(drone)((acum, deliver)=>address(deliver,acum)).tail))
     Future(createDelivered(path.path.scanLeft(drone)((acum, deliver)=>address(deliver,acum)).tail))
   }
 
-  def address(deliver: Deliver,drone: Try[Drone]):Try[Drone] ={
+  def address(deliver: Deliver,drone: Either[String,Drone]):Either[String,Drone] ={
     deliver.deliver.foldLeft(drone)((delAcum, order)=>changeDroneStatus(order,delAcum))
   }
 
-  def changeDroneStatus(order: Order,droneStatus: Try[Drone]):Try[Drone] ={
+  def changeDroneStatus(order: Order,droneStatus: Either[String,Drone]):Either[String,Drone] ={
 
     order match {
       case A() => forward(droneStatus)
@@ -63,15 +42,7 @@ sealed trait InterpetrationDeliveryService extends AlgebraDeliveryService {
     }
   }
 
-/*
-  def verifyForward(drone:Try[Drone]):Drone ={
-
-    for{
-      v <- drone.map(x=>x.coord.intX)
-    } yield
-  }
-*/
-  def forward(dronePosition: Try[Drone]):Try[Drone]={
+  def forward(dronePosition: Either[String,Drone]):Either[String,Drone]={
 
     dronePosition.map(tryDrone=>{
       val x = tryDrone.coord.intX
@@ -80,16 +51,15 @@ sealed trait InterpetrationDeliveryService extends AlgebraDeliveryService {
       val id=tryDrone.id
 
       orientation match {
-        case N() => Drone(Coord(x,y+1),orientation,id)
+        case N() => Drone.newDrone(Coord(x,y+1),orientation,id)
         case S() => Drone(Coord(x,y-1),orientation,id)
         case E() => Drone(Coord(x+1,y),orientation,id)
         case W() => Drone(Coord(x-1,y),orientation,id)
       }
     })
-
   }
 
-  def rotateL(dronePosition: Try[Drone]):Try[Drone]={
+  def rotateL(dronePosition: Either[String,Drone]):Either[String,Drone]={
     dronePosition.map(tryDrone=>{
       val x = tryDrone.coord.intX
       val y = tryDrone.coord.intY
@@ -103,10 +73,9 @@ sealed trait InterpetrationDeliveryService extends AlgebraDeliveryService {
         case W() => Drone(Coord(x,y),S(),id)
       }
     })
-
   }
 
-  def rotateR(dronePosition: Try[Drone]):Try[Drone]={
+  def rotateR(dronePosition: Either[String,Drone]):Either[String,Drone]={
     dronePosition.map(tryDrone=>{
       val x = tryDrone.coord.intX
       val y = tryDrone.coord.intY
@@ -124,8 +93,7 @@ sealed trait InterpetrationDeliveryService extends AlgebraDeliveryService {
   }
 
   override def writeDroneStatus(droneEntregas: Delivered) ={
-    droneEntregas.delivered.map(x=>x.isSuccess).map(x=>{
-
+    droneEntregas.delivered.map(x=>x.isRight).map(x=>{
       val pw = new PrintWriter(new File(s"out$x.txt"))
       pw.write(s"== Reporte de entregas ==")
       droneEntregas.delivered.map(tryDrone=>tryDrone.map(drone=>{
@@ -135,8 +103,7 @@ sealed trait InterpetrationDeliveryService extends AlgebraDeliveryService {
           val orientation = drone.orientation.toString
           pw.write(s"\n($intx,$inty) $orientation"
           )}
-      })
-      )
+      }))
       pw.close
     })
   }

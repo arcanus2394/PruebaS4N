@@ -1,2 +1,5 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/s4n/Documents/DronAuto/DronAuto/src/test/scala/modelling/dominio/ModellingSuite.scala:30:11: comparing values of types co.com.delivery.entities.Drone and Nothing using `==' will always yield false[0m
+[0m[[0m[33mwarn[0m] [0m[0m    assert(drone==(throw new Exception("El dron con id:1 se salio del grid en la posicion(11,0)")))[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mthere was one feature warning; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

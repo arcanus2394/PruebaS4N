@@ -1,7 +1,21 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mModellingSuite:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Creacion una Orden[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Prueba de Movimiento hacia la orientacion[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Prueba giro derecha[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Prueba giro izquierda[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Order creation[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Dron creation[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- Dron creation failure *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  java.lang.Exception: El dron con id:1 se salio del grid en la posicion(11,0)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at co.com.delivery.entities.Drone$.newDrone(Entities.scala:23)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at modelling.dominio.ModellingSuite.$anonfun$new$3(ModellingSuite.scala:29)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test move forward[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test turn rigth[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test turn left[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Test read one file[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Prueba Deliver[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Deliver Test[0m[0m

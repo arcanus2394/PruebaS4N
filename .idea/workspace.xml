@@ -2,36 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d807c5a4-014c-4002-a73b-ad96bb5d742b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/co/com/delivery/services/ReadService.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outtrue.txt" beforeDir="false" afterPath="$PROJECT_DIR$/outtrue.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/in01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/in01.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/co/com/delivery/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/co/com/delivery/Main.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/co/com/delivery/entities/Entities.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/co/com/delivery/entities/Entities.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/co/com/delivery/services/DeliveryService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/co/com/delivery/services/DeliveryService.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/modelling/dominio/ModellingSuite.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/modelling/dominio/ModellingSuite.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/Main$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/Main$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/Main$delayedInit$body.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/A$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/A$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Coord$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Coord$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Coord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Coord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/D$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/D$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/D.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Deliver$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Deliver$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Deliver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Deliver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Delivered$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Delivered$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Delivered.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Delivered.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Drone$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Drone$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Drone.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Drone.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/E$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/E$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/E.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/E.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/I$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/I$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/I.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/I.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/N$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/N$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/N.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/N.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Order$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Order$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Orientation$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Orientation$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Path$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Path$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/Path.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/S$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/S$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/S.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/S.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/W$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/co/com/delivery/entities/W$.class" afterDir="false" />
@@ -42,9 +33,7 @@
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/modelling/dominio/ModellingSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/test-classes/modelling/dominio/ModellingSuite.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/$global/streams/inc_compile_2.12.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/$global/streams/inc_compile_2.12.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/test/compile/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/compile/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/test/compileIncSetup/$global/streams/inc_compile_2.12.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/compileIncSetup/$global/streams/inc_compile_2.12.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/test/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/compileIncremental/$global/streams/out" afterDir="false" />
@@ -91,8 +80,8 @@
       <file leaf-file-name="Entities.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/entities/Entities.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-450">
-              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="47" />
+            <state relative-caret-position="222">
+              <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -100,8 +89,8 @@
       <file leaf-file-name="ModellingSuite.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/modelling/dominio/ModellingSuite.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+            <state relative-caret-position="105">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="e#27#64#0" expanded="true" />
               </folding>
@@ -112,17 +101,17 @@
       <file leaf-file-name="in01.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/in/in01.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="105">
+              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeliveryService.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DeliveryService.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/services/DeliveryService.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="126" column="39" selection-start-line="126" selection-start-column="39" selection-end-line="126" selection-end-column="39" />
+            <state relative-caret-position="-78">
+              <caret line="90" column="6" lean-forward="true" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
               <folding>
                 <element signature="e#34#81#0" expanded="true" />
               </folding>
@@ -130,11 +119,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReadService.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/services/ReadService.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+              <folding>
+                <element signature="e#34#67#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/Main.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="225">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding>
                 <element signature="e#25#62#0" expanded="true" />
               </folding>
@@ -150,11 +151,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/in/in01.txt" />
-        <option value="$PROJECT_DIR$/src/test/scala/modelling/dominio/ModellingSuite.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/co/com/delivery/entities/Entities.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/co/com/delivery/Main.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/co/com/delivery/services/ReadService.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/co/com/delivery/services/DeliveryService.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/in/in01.txt" />
+        <option value="$PROJECT_DIR$/src/main/scala/co/com/delivery/Main.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/co/com/delivery/entities/Entities.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/modelling/dominio/ModellingSuite.scala" />
       </list>
     </option>
   </component>
@@ -393,31 +395,31 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3295082" />
-      <window_info anchor="right" id="sbt" order="3" weight="0.32960895" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3295082" />
+      <window_info anchor="right" id="sbt" order="9" weight="0.32960895" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295082" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3295082" />
-      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3295082" />
+      <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25379092" />
-      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25379092" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Gradle" order="3" />
+      <window_info anchor="right" id="Gradle" order="7" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.3295082" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.3295082" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -474,46 +476,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/outtrue.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/in/in01.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/Main.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#25#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/entities/Entities.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="47" />
+        <state relative-caret-position="105">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/modelling/dominio/ModellingSuite.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        <state relative-caret-position="105">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="e#27#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/entities/Entities.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/services/ReadService.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+          <folding>
+            <element signature="e#34#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/services/DeliveryService.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="126" column="39" selection-start-line="126" selection-start-column="39" selection-end-line="126" selection-end-column="39" />
+        <state relative-caret-position="-78">
+          <caret line="90" column="6" lean-forward="true" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
           <folding>
             <element signature="e#34#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/co/com/delivery/Main.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="e#25#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
