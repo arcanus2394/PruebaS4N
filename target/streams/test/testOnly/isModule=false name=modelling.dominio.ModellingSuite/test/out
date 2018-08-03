@@ -3,19 +3,6 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- Drone creation[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Drone creation failure[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Test move forward[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m- Test move forward failure *** FAILED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  java.lang.Exception: Error al moverme fuera del grid[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at co.com.delivery.services.DroneService.$anonfun$changeDroneStatus$2(DroneService.scala:28)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.util.Either.fold(Either.scala:189)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at co.com.delivery.services.DroneService.changeDroneStatus(DroneService.scala:29)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at co.com.delivery.services.DroneService.changeDroneStatus$(DroneService.scala:17)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at co.com.delivery.services.DroneService$.changeDroneStatus(DroneService.scala:95)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at modelling.dominio.ModellingSuite.$anonfun$new$5(ModellingSuite.scala:40)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Test turn rigth[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Test turn left[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Test read one file[0m[0m
