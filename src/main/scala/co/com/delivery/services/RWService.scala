@@ -30,7 +30,7 @@ sealed trait InterRWService extends AlgRWService{
   override def writeDroneStatus(droneEntregas: Delivered,id:Int) ={
     val pw = new PrintWriter(new File(s"out$id.txt"))
     pw.write(s"== Reporte de entregas ==")
-    droneEntregas.delivered.map(r=>{
+    droneEntregas.DroneList.map(r=>{
       val intx = r.coord.intX
       val inty = r.coord.intY
       val orientation = r.orientation.toString

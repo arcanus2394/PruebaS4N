@@ -32,11 +32,11 @@ sealed trait DroneService extends AlgebraDroneService{
   override def deliver(path: Path, drone: Drone, id: Int): Future[Delivered] = {
 
     //Future(createDelivered(path.path.scanLeft(drone)((acum, deliver)=>address(deliver,acum)).tail))
-    Future(createDelivered(path.path.scanLeft(drone)((acum, deliver)=>address(deliver, acum)).tail, id))
+    Future(createDelivered(path.DeliverList.scanLeft(drone)((acum, deliver)=>address(deliver, acum)).tail, id))
   }
 
   private def address(deliver: Deliver, drone: Drone):Drone ={
-    deliver.deliver.foldLeft(drone)((delAcum, order)=>changeDroneStatus(order, delAcum))
+    deliver.OrdersList.foldLeft(drone)((delAcum, order)=>changeDroneStatus(order, delAcum))
   }
 
   private def createDelivered(list: List[Drone], id: Int):Delivered={
