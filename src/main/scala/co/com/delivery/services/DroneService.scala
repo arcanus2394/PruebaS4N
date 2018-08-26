@@ -1,7 +1,10 @@
 package co.com.delivery.services
 
 import java.util.concurrent.Executors
-import co.com.delivery.entities._
+
+import co.com.delivery.adapters.InterRWService
+import co.com.delivery.dron.entities.{Drone, _}
+
 import scala.concurrent.{ExecutionContext, Future}
 
 // Algebra
@@ -17,9 +20,9 @@ sealed trait DroneService extends AlgebraDroneService{
   override def changeDroneStatus(order: Order, droneStatus: Drone):Drone ={
 
    val res = order match {
-      case A() => forward(droneStatus)
-      case I() => rotateL(droneStatus)
-      case D() => rotateR(droneStatus)
+      case A => forward(droneStatus)
+      case I => rotateL(droneStatus)
+      case D => rotateR(droneStatus)
     }
     val resEither = for{
       x <- res

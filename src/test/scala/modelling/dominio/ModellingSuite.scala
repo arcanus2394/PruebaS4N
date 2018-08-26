@@ -1,9 +1,12 @@
 package modelling.dominio
 
 import java.util.concurrent.Executors
-import co.com.delivery.entities._
+
+import co.com.delivery.adapters.InterRWService
+import co.com.delivery.dron.entities._
 import co.com.delivery.services._
 import org.scalatest.FunSuite
+
 import scala.concurrent.duration._
 import scala.concurrent.{Await, ExecutionContext, Future}
 import scala.util.{Success, Try}
